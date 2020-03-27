@@ -7,7 +7,7 @@ Plug 'nsf/gocode', { 'rtp': 'vim' }
 
 Plug 'https://github.com/luofei614/vim-plug', { 'dir':'~/.vim/my'}
 
-Plug 'vim-scripts/AutoComplPop'
+" Plug 'vim-scripts/AutoComplPop'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'vim-scripts/Tagbar'
 
@@ -34,14 +34,8 @@ Plug 'vim-scripts/lucius'
 "bookmark  mm 添加书签,  mn 移动书签  mp 移动到前一个书签  ma 删除所有书签
 Plug 'MattesGroeger/vim-bookmarks'
 
-"安装此插件解决macvim下没有加号寄存器的问题。
-Plug 'https://github.com/kana/vim-fakeclip.git'
-
 "snippets
 Plug 'MarcWeber/vim-addon-mw-utils'
-Plug 'tomtom/tlib_vim'
-Plug 'garbas/vim-snipmate'
-Plug 'https://github.com/bonsaiben/bootstrap-snippets.git'
 
 "快速跳转到字符
 Plug 'vim-scripts/EasyMotion'
@@ -52,6 +46,8 @@ Plug 'https://github.com/luofei614/vim-golang.git'
 "检查程序语法错误
 Plug 'https://github.com/scrooloose/syntastic.git'
 call plug#end()
+
+let mapleader = "\<space>"
 
 "vimgrep查询时排除composer的vendor目录,排除前端bower和node的包文件目录,CommandT也不会查到他们
 set wildignore=vendor/**
@@ -88,11 +84,8 @@ map <F3> :! ctags -R<CR>
 map! <F3> <Esc>:! ctags -R<CR>
 
 "快捷键设置
-map <F11> :NERDTreeToggle<CR>
-map! <F11> <Esc>:NERDTreeToggle<CR>
-
-map <F12> :TagbarToggle<CR>
-map! <F12> <Esc>:TagbarToggle<CR>
+map <leader>Fn :NERDTreeToggle<CR>
+map <leader>Ft :TagbarToggle<CR>
 
 "文件新tab页打开, CommandT插件配置
 let g:CommandTAcceptSelectionMap = '<space>'
