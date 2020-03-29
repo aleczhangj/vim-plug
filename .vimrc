@@ -229,3 +229,7 @@ autocmd FileType java setlocal omnifunc=javacomplete#Complete
 let g:pydiction_location = '/Users/zhangjie/.vim/plugged/pydiction/complete-dict'
 let g:pydiction_menu_height = 20
 
+nmap <leader>k <C-w>k
+nmap <leader>j <C-w>j
+nmap <leader>h <C-w>h
+nmap <leader>l <C-w>l
