@@ -55,6 +55,10 @@ Plug 'https://github.com/luofei614/vim-golang.git'
 
 "检查程序语法错误
 Plug 'https://github.com/scrooloose/syntastic.git'
+
+" git
+Plug 'tpope/vim-fugitive'
+
 call plug#end()
 
 let mapleader = "\<space>"
