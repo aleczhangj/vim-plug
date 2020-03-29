@@ -2,8 +2,18 @@ call plug#begin('~/.vim/plugged')
 
 " Make sure you use single quotes
 Plug 'junegunn/vim-easy-align'
-" Plugin options
+
+" go
 Plug 'nsf/gocode', { 'rtp': 'vim' }
+Plug 'cespare/vim-golang'
+
+" java
+Plug 'artur-shaik/vim-javacomplete2'
+
+" python
+Plug 'rkulla/pydiction'
+
+Plug 'ycm-core/YouCompleteMe'
 
 Plug 'https://github.com/luofei614/vim-plug', { 'dir':'~/.vim/my'}
 
@@ -61,7 +71,7 @@ let g:acp_behaviorKeywordCommand="\<C-n>"
 set hlsearch
 
 "设置NERDTreetagbar的宽度
-let g:NERDTreeWinSize = 40
+let g:NERDTreeWinSize = 30
 let g:tagbar_width=40
 
 "颜色主题设置
@@ -84,8 +94,8 @@ map <F3> :! ctags -R<CR>
 map! <F3> <Esc>:! ctags -R<CR>
 
 "快捷键设置
-map <leader>Fn :NERDTreeToggle<CR>
-map <leader>Ft :TagbarToggle<CR>
+map <leader>N :NERDTreeToggle<CR>
+map <leader>T :TagbarToggle<CR>
 
 "文件新tab页打开, CommandT插件配置
 let g:CommandTAcceptSelectionMap = '<space>'
@@ -180,3 +190,38 @@ set wrap "自动换行
 "设置无备份
 set nobackup
 set nowritebackup
+
+let g:tagbar_type_go = {
+    \ 'ctagstype' : 'go',
+    \ 'kinds'     : [
+        \ 'p:package',
+        \ 'i:imports:1',
+        \ 'c:constants',
+        \ 'v:variables',
+        \ 't:types',
+        \ 'n:interfaces',
+        \ 'w:fields',
+        \ 'e:embedded',
+        \ 'm:methods',
+        \ 'r:constructor',
+        \ 'f:functions'
+    \ ],
+    \ 'sro' : '.',
+    \ 'kind2scope' : {
+        \ 't' : 'ctype',
+        \ 'n' : 'ntype'
+    \ },
+    \ 'scope2kind' : {
+        \ 'ctype' : 't',
+        \ 'ntype' : 'n'
+    \ },
+    \ 'ctagsbin'  : 'gotags',
+    \ 'ctagsargs' : '-sort -silent'
+\ }
+
+autocmd FileType java setlocal omnifunc=javacomplete#Complete
+
+" pydirection
+let g:pydiction_location = '/Users/zhangjie/.vim/plugged/pydiction/complete-dict'
+let g:pydiction_menu_height = 20
+
