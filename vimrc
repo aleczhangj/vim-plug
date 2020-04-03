@@ -153,7 +153,9 @@ imap <S-TAB> <Plug>snipMateNextOrTrigger
 autocmd BufEnter *.* exe 'silent ! echo -ne "\033];%:t\007"'
 
 "支持鼠标
-set mouse=a
+set mouse=v
+" 支持将vim中复制的内容复制到系统剪切板
+set clipboard=unnamed
 
 "用数字切换tab页面
 noremap  1 1gt
