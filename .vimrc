@@ -5,7 +5,7 @@ Plug 'junegunn/vim-easy-align'
 
 " go
 Plug 'nsf/gocode', { 'rtp': 'vim' }
-Plug 'cespare/vim-golang'
+Plug 'luofei614/vim-golang'
 
 " java
 Plug 'artur-shaik/vim-javacomplete2'
@@ -23,6 +23,7 @@ Plug 'vim-scripts/Tagbar'
 
 Plug 'vim-scripts/L9'
 
+" 查找
 "Plug 'FuzzyFinder'
 "快速浏览文件，FuzzyFinder 也能快速浏览文件， 但是如果项目文件多会很慢
 "如果系统升级可以需要运行 gem update --system, do中的命令可能需要手动运行 
@@ -31,6 +32,7 @@ Plug 'vim-scripts/L9'
 " Plugin outside ~/.vim/plugged with post-update hook
 " 下面这个插件可取代Command-T 但是现在暂时不支持目录忽略，所以先暂时不用
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
+Plug 'mileszs/ack.vim'
 
 " git 插件
 Plug 'vim-scripts/WebAPI.vim'
@@ -51,7 +53,6 @@ Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'vim-scripts/EasyMotion'
 
 Plug 'https://github.com/bling/vim-airline.git'
-Plug 'https://github.com/luofei614/vim-golang.git'
 
 "检查程序语法错误
 Plug 'https://github.com/scrooloose/syntastic.git'
@@ -233,3 +234,5 @@ nmap <leader>k <C-w>k
 nmap <leader>j <C-w>j
 nmap <leader>h <C-w>h
 nmap <leader>l <C-w>l
+
+nnoremap <Leader>a :Ack!<Space>
