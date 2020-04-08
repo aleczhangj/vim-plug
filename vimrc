@@ -43,6 +43,9 @@ Plug 'vim-scripts/molokai'
 Plug 'vim-scripts/Solarized'
 Plug 'vim-scripts/lucius'
 
+" todo
+Plug 'vim-scripts/TaskList.vim'
+
 "bookmark  mm 添加书签,  mn 移动书签  mp 移动到前一个书签  ma 删除所有书签
 Plug 'MattesGroeger/vim-bookmarks'
 
@@ -238,3 +241,9 @@ nmap <leader>h <C-w>h
 nmap <leader>l <C-w>l
 
 nnoremap <Leader>a :Ack!<Space>
+
+map <leader>td <Plug>TaskList
+
+" ycm
+let g:ycm_global_ycm_extra_conf='~/.vim/.ycm_extra_conf.py'
+let g:ycm_key_list_select_completion = ['<TAB>', '<Down>']
