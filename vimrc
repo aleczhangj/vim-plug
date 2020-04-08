@@ -15,7 +15,7 @@ Plug 'rkulla/pydiction'
 
 Plug 'ycm-core/YouCompleteMe'
 
-Plug 'https://github.com/luofei614/vim-plug', { 'dir':'~/.vim/my'}
+Plug 'luofei614/vim-plug', { 'dir':'~/.vim/my'}
 
 " Plug 'vim-scripts/AutoComplPop'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
@@ -23,20 +23,11 @@ Plug 'vim-scripts/Tagbar'
 
 Plug 'vim-scripts/L9'
 
-" 查找
-"Plug 'FuzzyFinder'
-"快速浏览文件，FuzzyFinder 也能快速浏览文件， 但是如果项目文件多会很慢
-"如果系统升级可以需要运行 gem update --system, do中的命令可能需要手动运行 
-"Plug 'Command-T',{'do': 'cd ./ruby/command-t/; ruby extconf.rb ; make'} 
-
-" Plugin outside ~/.vim/plugged with post-update hook
-" 下面这个插件可取代Command-T 但是现在暂时不支持目录忽略，所以先暂时不用
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
 Plug 'mileszs/ack.vim'
 
 " git 插件
-Plug 'vim-scripts/WebAPI.vim'
-Plug 'vim-scripts/Gist.vim'
+Plug 'tpope/vim-fugitive'
 
 " color
 Plug 'vim-scripts/molokai'
@@ -55,13 +46,11 @@ Plug 'MarcWeber/vim-addon-mw-utils'
 "快速跳转到字符
 Plug 'vim-scripts/EasyMotion'
 
+" 标签栏
 Plug 'https://github.com/bling/vim-airline.git'
 
-"检查程序语法错误
+" 检查程序语法错误
 Plug 'https://github.com/scrooloose/syntastic.git'
-
-" git
-Plug 'tpope/vim-fugitive'
 
 call plug#end()
 
@@ -93,21 +82,10 @@ set background=dark
 "colorscheme solarized
 "set background=light
 
-"Gist设置
-let g:gist_detect_filetype = 1
-let g:gist_clip_command = 'xclip -selection clipboard'
-
-"快速生成tag文件
-map <F3> :! ctags -R<CR>
-map! <F3> <Esc>:! ctags -R<CR>
-
 "快捷键设置
 map <leader>N :NERDTreeToggle<CR>
 map <leader>T :TagbarToggle<CR>
-
-"文件新tab页打开, CommandT插件配置
-let g:CommandTAcceptSelectionMap = '<space>'
-let g:CommandTAcceptSelectionTabMap = '<CR>'
+map <leader>C :!ctags -R<CR>
 
 " 用FZF 查找文件 
 " 设置查找时排除的目录
@@ -118,13 +96,6 @@ map!<C-P> <ESc>:w<CR> :tabnew<CR>:FZF<CR>
 "快速对齐
 " Start interactive EasyAlign in visual mode (e.g. vip<Enter>)
 vmap <Enter> <Plug>(EasyAlign)
-
-" Start interactive EasyAlign for a motion/text object (e.g. <Leader>aip)
-nmap <Leader>a <Plug>(EasyAlign)
-
-"快速查找文函数
-" map <C-F> :FufTag<CR>
-" map! <C-F> <Esc>:w<CR>:FufTag<CR>
 
 "ctrl+s为保存
 map <C-S> :w<CR>
@@ -240,7 +211,7 @@ nmap <leader>j <C-w>j
 nmap <leader>h <C-w>h
 nmap <leader>l <C-w>l
 
-nnoremap <Leader>a :Ack!<Space>
+" nnoremap <Leader>a :Ack!<Space>
 
 map <leader>td <Plug>TaskList
 
