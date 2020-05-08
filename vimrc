@@ -132,16 +132,16 @@ set mouse=v
 set clipboard=unnamed
 
 "用数字切换tab页面
-noremap  1 1gt
-noremap  2 2gt
-noremap  3 3gt
-noremap  4 4gt
-noremap  5 5gt
-noremap  6 6gt
-noremap  7 7gt
-noremap  8 8gt
-noremap  9 9gt
-noremap  0 :tablast<CR>
+noremap  <leader>1 1gt
+noremap  <leader>2 2gt
+noremap  <leader>3 3gt
+noremap  <leader>4 4gt
+noremap  <leader>5 5gt
+noremap  <leader>6 6gt
+noremap  <leader>7 7gt
+noremap  <leader>8 8gt
+noremap  <leader>9 9gt
+noremap  <leader>0 :tablast<CR>
 
 "语法高亮
 syntax enable
